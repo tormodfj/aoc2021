@@ -1,8 +1,7 @@
-open System
 open System.IO
 
-File.ReadAllLines("input")
-|> Seq.map Int32.Parse
+File.ReadLines "input"
+|> Seq.map int
 |> Seq.pairwise
 |> Seq.filter (fun (x,y) -> x < y)
 |> Seq.length

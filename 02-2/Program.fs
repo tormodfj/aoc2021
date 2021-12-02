@@ -20,7 +20,7 @@ let executeCommand (horiz, depth, aim) command =
     | Up(d) -> (horiz, depth, aim - d)
     | Down(d) -> (horiz, depth, aim + d)
 
-File.ReadAllLines("input")
+File.ReadLines "input"
 |> Seq.map parseCommand
 |> Seq.fold executeCommand (0, 0, 0)
 |> fun(horiz, depth, _) -> horiz * depth 
