@@ -7,4 +7,4 @@ File.ReadLines "input"
 |> Seq.pairwise
 |> Seq.filter (fun (x,y) -> x < y)
 |> Seq.length
-|> printf "%i"
+|> printfn "%i"

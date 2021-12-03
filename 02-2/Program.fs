@@ -24,4 +24,4 @@ File.ReadLines "input"
 |> Seq.map parseCommand
 |> Seq.fold executeCommand (0, 0, 0)
 |> fun(horiz, depth, _) -> horiz * depth 
-|> printf "%i"
+|> printfn "%i"

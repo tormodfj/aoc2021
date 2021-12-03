@@ -20,4 +20,4 @@ let binaryToInt cs = Convert.ToInt32(cs |> Array.ofList |> String, 2)
 let gammaRate = binaryGammaRate |> binaryToInt
 let epsilonRate = binaryEpsilonRate |> binaryToInt
 
-printf "%i" (gammaRate*epsilonRate)
+printfn "%i" (gammaRate*epsilonRate)

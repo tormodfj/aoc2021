@@ -30,4 +30,4 @@ let report = File.ReadLines "input" |> List.ofSeq
 let o2 = report |> o2RatingAnalyzer
 let co2 = report |> co2RatingAnalyzer
 
-printf "%i" (o2*co2)
+printfn "%i" (o2*co2)
