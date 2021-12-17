@@ -5,7 +5,7 @@ type Line = { Input: string array; Output:string array }
 type WireMapper = char -> char
 
 let constructWireMapper (line:Line) : WireMapper = 
-    // Counts occurrence of character across input patterns
+    // Counts occurrences of character across input patterns
     let count (c:char) =
         line.Input
         |> Array.filter (fun s -> s.Contains(c))
@@ -61,7 +61,7 @@ let constructWireMapper (line:Line) : WireMapper =
     // Return our mapping function
     fun c -> mapping[c]
 
-let segmentsToDigit (segment:char seq):char =
+let segmentsToDigit (segment:char seq) : char =
     let map input =
         match input with
         | "abcefg" -> '0'
@@ -74,7 +74,7 @@ let segmentsToDigit (segment:char seq):char =
         | "acf" -> '7'
         | "abcdefg" -> '8'
         | "abcdfg" -> '9'
-        | _ -> failwithf "Unrecognized segment"
+        | _ -> failwith "Unrecognized segment"
 
     segment
     |> Seq.sort
@@ -82,7 +82,7 @@ let segmentsToDigit (segment:char seq):char =
     |> String
     |> map
 
-let calculateOutputValue line : int = 
+let calculateOutputValue (line:Line) = 
     let wireMapper = 
         line
         |> constructWireMapper
